@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <h1>Smart Expense Dashboard</h1>
+        </div>
+
+        <div class="nav-center">
+            <button class="nav-btn active" onclick="location.href='dashboard'">Dashboard</button>
+
+            <button class="nav-btn" onclick="location.href='add'">เพิ่มรายการ</button>
+
+            <button class="nav-btn" onclick="location.href='history'">ประวัติ</button>
+        </div>
+
+        <div class="nav-right">
+            <button class="logout-btn" onclick="location.href='login'">ออกจากระบบ</button>
+        </div>
+    </header>
+
+
+    <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            loadDashboard();
+          });
+           
+    </script>
+
+    <div class="all-cards">
+        
+        <div class="card">
+            <div>รายรับทั้งหมด</div><br>
+            <h2 style="color: #4caf50;" id="income">0</h2>
+            <small style="color: #666;" id="monthlyIncome">เดือนนี้: ฿</small>
+        </div>
+
+        
+        <div class="card">
+            <div>รายจ่ายทั้งหมด</div><br>
+            <h2 style="color: #f44336;" id="expense">0</h2>
+            <small style="color: #666;" id="monthlyExpense">เดือนนี้: ฿</small>
+        </div>
+
+        <div class="card span-2">
+            <div>ยอดคงเหลือ</div><br>
+            <h2 id="balance">0</h2>
+            <small style="color: #666;" id="savingsRate">อัตราการออม: %</small>
+        </div>
+
+
+        <div class="card span-2">
+            <div>รายรับ-รายจ่ายรายเดือน</div>
+            <small style="color: #666;">เปรียบเทียบรายรับและรายจ่าย 6 เดือนล่าสุด</small><br><br>
+            <canvas style="margin-top: 50px;" id="barChart"></canvas>
+        </div>
+
+        <div class="card span-2">
+            <div>รายจ่ายแบ่งตามหมวดหมู่</div>
+            <small style="color: #666;">สัดส่วนการใช้จ่ายในแต่ละหมวดหมู่</small><br><br><br><br>
+            <div class="chart-container">
+                <canvas id="pieChart"></canvas>
+            </div>
+            
+            
+        </div>
+
+        
+
+        
+    </div>
+
+
+        
+    
+
+
+</body>
+</html>

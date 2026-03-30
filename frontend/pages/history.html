@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/index.js"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <h1>Smart Expense Dashboard</h1>
+        </div>
+
+        <div class="nav-center">
+            <button class="nav-btn" onclick="location.href='dashboard'">Dashboard</button>
+
+            <button class="nav-btn" onclick="location.href='add'">เพิ่มรายการ</button>
+
+            <button class="nav-btn active" onclick="location.href='history'">ประวัติ</button>
+        </div>
+
+        <div class="nav-right">
+            <button class="logout-btn" onclick="location.href='login'">ออกจากระบบ</button>
+        </div> 
+    </header>
+
+
+    <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            loadHistory();
+            fetchData();
+          });
+           
+    </script>
+
+    <h1 class="card" style="display: flex; justify-content: center;">ประวัติรายการค่าใช้จ่าย</h1>
+    
+    <div class="his-cards" style="margin: 10px; padding: 20px; ">
+
+        <div class="card">
+            <div >รายการทั้งหมด</div><br>
+            <h2 id="totalCount">0</h2>
+        </div>
+        
+        <div class="card">
+            <div>รายรับ</div><br>
+            <h2 style="color: #4caf50;" id="income">0</h2>
+        
+        </div>
+
+        <div class="card">
+            <div>รายจ่าย</div><br>
+            <h2 style="color: #f44336;" id="expense">0</h2>
+
+        </div>
+
+        <div class="card span-3">
+            <div>รายการทั้งหมด</div>
+            <small style="color: #666;">ประวัติรายรับ-รายจ่ายทั้งหมดของคุณ</small><br><br>
+            <select id="type" onchange="fetchData()">
+                <option value="all">ทั้งหมด</option>
+                <option value="income">รายรับ</option>
+                <option value="expense">รายจ่าย</option>
+            </select><br><br>
+            
+
+           
+
+            <table border="1" width="100%">
+            <thead>
+                <tr>
+                <th>วันที่</th>
+                <th>ประเภท</th>
+                <th>หมวดหมู่</th>
+                <th>รายละเอียด</th>
+                <th>จำนวน</th>
+                <th>จัดการ</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+    
+</body>
+</html>

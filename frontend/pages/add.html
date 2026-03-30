@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>app expense</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-left">
+            <h1>Smart Expense Dashboard</h1>
+        </div>
+
+        <div class="nav-center">
+            <button class="nav-btn" onclick="location.href='dashboard'">Dashboard</button>
+
+            <button class="nav-btn active" onclick="location.href='add'">เพิ่มรายการ</button>
+
+            <button class="nav-btn" onclick="location.href='history'">ประวัติ</button>
+        </div>
+
+        <div class="nav-right">
+            <button class="logout-btn" onclick="location.href='login'">ออกจากระบบ</button>
+        </div>
+    </header>
+
+
+    <!-- <div class="nav-selector" >
+        <button class="nav-selector-btn active" onclick="location.href='add'">เพิ่มรายการค่าใช้จ่าย</button>
+
+        <button class="nav-selector-btn" onclick="location.href='goal'">ตั้งเป้าหมาย</button>
+    </div> -->
+    
+    <h1 class="card" style="display: flex; justify-content: center;">เพิ่มรายการ</h1>    
+
+    <div class="ex-cards" style="margin: 10px; padding: 20px; ">
+
+    
+        <div class="card">
+            เพิ่มรายรับ<br>
+            <small style="color: #666;">บันทึกรายการรายรับ</small><br><br>
+
+            <form action="/add" method="POST">
+                <div>
+                    <label for="amount">จำนวนเงิน</label><br>
+                    <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01" required><br><br>
+                </div>
+
+                <div>
+                    <label for="category">หมวดหมู่</label><br>
+                    <select id="category" name="category_id" required>
+                        <option value="">--เลือกหมวดหมู่--</option>
+                        <option value="5">เงินเดือน</option>
+                        <option value="6">โบนัส</option>
+                        <option value="7">การขาย</option>
+                        <option value="8">ของขวัญ</option>
+                        <option value="9">อื่นๆ</option>
+                    </select><br><br>
+                </div>
+
+                <div>
+                    <label for="date">วันที่</label><br>
+                    <input type="date" id="date" name="date" required><br><br>
+                </div>
+
+                <div>
+                    <label for="note">หมายเหตุ</label><br>
+                    <input type="text" id="note" name="note" placeholder="รายละเอียดเพิ่มเติม (ไม่บังคับ)"><br><br>
+                </div>
+                <input type="hidden" name="type" value="income">
+                <button class="in-btn" type="submit">เพิ่มรายการ</button>
+                
+            </form>
+        </div>
+
+        <div class="card">
+            เพิ่มรายจ่าย<br>
+            <small style="color: #666;">บันทึกรายการรายจ่าย</small><br><br>
+
+            <form action="/add" method="POST">
+
+                <div>
+                    <label for="amount">จำนวนเงิน</label><br>
+                    <input type="number" id="amount" name="amount" placeholder="0.00" step="0.01" required><br><br>
+                </div>
+
+                <div>
+                    <label for="category">หมวดหมู่</label><br>
+                    <select id="category" name="category_id" required>
+                        <option value="">--เลือกหมวดหมู่--</option>
+                        <option value="1">ของกิน</option>
+                        <option value="2">การเดินทาง</option>
+                        <option value="3">ที่พัก</option>
+                        <option value="4">บันเทิง</option>
+                        <option value="9">อื่นๆ</option>
+                    </select><br><br>
+                </div>
+
+                <div>
+                    <label for="date">วันที่</label><br>
+                    <input type="date" id="date" name="date" required><br><br>
+                </div>
+
+                <div>
+                    <label for="note">หมายเหตุ</label><br>
+                    <input id="note" name="note" placeholder="รายละเอียดเพิ่มเติม (ไม่บังคับ)"><br><br>
+                </div>
+
+                <input type="hidden" name="type" value="expense">
+                <button class="ex-btn" type="submit">เพิ่มรายการ</button>
+                
+            </form>
+        </div>
+
+
+
+    </div>
+
+    
+</body>
+</html>

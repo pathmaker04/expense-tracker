@@ -1,0 +1,245 @@
+body { 
+    background-color: #dbeaff;
+    height: 100vh;
+    
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.input-box {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+
+}
+ .login-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1d8df7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+input, button {
+  height: 40px;
+  padding: 0 10px;
+  
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 5px;
+  width: 95%;
+}
+
+button {
+  background: #2d8cf0;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.in-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.ex-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.note {
+  display: block;
+  margin-top: 10px;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.all-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  
+}
+
+.ex-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  
+}
+
+.his-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+  padding: 20px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+  
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+.span-4 {
+  grid-column: span 4;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb
+}
+
+.nav-left h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+.nav-center {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  padding: 8px 40px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #93a7ff;
+  
+}
+
+.nav-btn:hover {
+  background: #5675dd;
+}
+
+.nav-btn.active {
+  background: #4f46e5;
+  color: white;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #374151;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+.nav-selector {
+  display: flex;
+  align-items: center;
+  height: 45px;
+  padding: 3px;
+  background: #eee;
+  border-radius: 999px; 
+  margin-top: 10px;
+ 
+}
+
+.nav-selector-btn {
+  margin-bottom: 3px; 
+  width: 100%; 
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.2s ease;
+  
+}
+
+.nav-selector-btn:hover {
+  background: #d1d1d1;
+}
+
+.nav-selector-btn.active {
+  background: #bababe;
+  color: white;
+}
+
+#pieChart {
+  width: 270px !important;
+  height: 240px !important;
+
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  
+}
+
+
