@@ -63,7 +63,7 @@ app.post('/login', async (req, res) => {
     const user = rows[0];
 
     if (user!.password === password) {
-      (req.session as any).userId = user!.id;
+      (req.session as { userId?: number }).userId = user!.id;
       req.session.save(() => {
         res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/dashboard.html');
       });
@@ -79,7 +79,7 @@ app.post('/login', async (req, res) => {
       [email, password]
     );
 
-    (req.session as any).userId = result.insertId;
+    (req.session as { userId?: number }).userId = result.insertId;
     return res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/dashboard.html');
   }
 });
@@ -118,7 +118,7 @@ app.get('/add', (req, res) => {
 
 app.post('/add', async (req, res) => {
   try {
-    const user_id = (req.session as any).userId;
+    const user_id = (req.session as { userId?: number }).userId;
 
     if (!user_id) {
       return res.status(401).send('Not logged in');

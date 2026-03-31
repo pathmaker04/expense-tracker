@@ -154,30 +154,30 @@ async function deleteItem(id) {
 }
 ////////////////
 
-document.getElementById('addForm').addEventListener('submit', async (e) => {
-  e.preventDefault(); 
+// document.getElementById('addForm').addEventListener('submit', async (e) => {
+//   e.preventDefault(); 
 
-  const amount = document.getElementById('amount').value;
-  const category = document.getElementById('category').value;
+//   const amount = document.getElementById('amount').value;
+//   const category = document.getElementById('category').value;
 
-  const res = await fetch('https://expense-tracker-production-e297.up.railway.app', {
-    method: 'POST',
-    credentials: 'include', 
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      amount,
-      category
-    })
-  });
+//   const res = await fetch('https://expense-tracker-production-e297.up.railway.app', {
+//     method: 'POST',
+//     credentials: 'include', 
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({
+//       amount,
+//       category
+//     })
+//   });
 
-  const text = await res.text();
-  console.log(text);
+//   const text = await res.text();
+//   console.log(text);
 
   
-  window.location.href = '/pages/dashboard.html';
-});
+//   window.location.href = '/pages/dashboard.html';
+// });
 
 
 
