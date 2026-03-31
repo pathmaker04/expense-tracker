@@ -36,13 +36,13 @@ app.use(express.json());
 ////////////////////////////////////
 
 app.get('/', (req, res) => {
-  res.redirect('https://expense-tracker-1w282gr8e-pathmaker04s-projects.vercel.app/login');
+  res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/login.html');
 });
 
 app.get('/index', (req, res) => {
   const index = path.join(__dirname, '../../frontend/index.html');
   res.sendFile(index);
-  res.redirect('https://expense-tracker-1w282gr8e-pathmaker04s-projects.vercel.app/login');
+  res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/login.html');
 });
 
 app.get('/login', (req, res) => {
@@ -65,7 +65,7 @@ app.post('/login', async (req, res) => {
     if (user!.password === password) {
       (req.session as any).userId = user!.id;
       req.session.save(() => {
-        res.redirect('https://expense-tracker-1w282gr8e-pathmaker04s-projects.vercel.app/dashboard');
+        res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/dashboard.html');
       });
       
       //return res.redirect('/dashboard');
@@ -80,7 +80,7 @@ app.post('/login', async (req, res) => {
     );
 
     (req.session as any).userId = result.insertId;
-    return res.redirect('https://expense-tracker-1w282gr8e-pathmaker04s-projects.vercel.app/dashboard');
+    return res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/dashboard.html');
   }
 });
 
@@ -131,7 +131,7 @@ app.post('/add', async (req, res) => {
   );
 
 
-  res.redirect('https://expense-tracker-1w282gr8e-pathmaker04s-projects.vercel.app/add');
+  res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/add.html');
   
 });
 
@@ -158,7 +158,7 @@ app.delete('/api/history/:id', async (req, res) => {
 
 app.get('/logout', (req, res) => {
   req.session.destroy(() => {
-    res.redirect('expense-tracker-production-e297.up.railway.app/login');
+    res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/login.html');
   });
 });
 
