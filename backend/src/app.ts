@@ -117,30 +117,27 @@ app.get('/add', (req, res) => {
 });
 
 app.post('/add', async (req, res) => {
-  console.log('session:', req.session);
+  try {
+    const user_id = (req.session as any).userId;
 
-  const userId = (req.session as any).userId;
-  console.log('userId:', userId);
+    if (!user_id) {
+      return res.status(401).send('Not logged in');
+    }
 
-  res.send('debug: ' + userId + '' + req.session);
+    const { type, amount, category_id, date, note } = req.body;
 
+    await db.execute(
+      `INSERT INTO expenses (user_id, category_id, type, amount, date, note)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [user_id, category_id, type, amount, date, note]
+    );
 
-  const { type, amount, category_id, date, note  } = req.body;
+    res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/dashboard.html');
 
-  const user_id = (req.session as any).userId;
-
-
-  console.log('SESSION:', req.session);
-
-  await db.execute(
-    `INSERT INTO expenses (user_id, category_id, type, amount, date, note)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-    [user_id, category_id, type, amount, date, note]
-  );
-
-
-  res.redirect('https://expense-tracker-production-e297.up.railway.app');
-  
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
 });
 
 
