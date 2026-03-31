@@ -14,6 +14,8 @@ async function loadHistory() {
 async function fetchData() {
   const type = document.getElementById('type').value;
 
+  const API = "https://expense-tracker-production-e297.up.railway.app";
+
   const res = await fetch(`${API}/api/history?type=${type}`, {
     credentials: 'include'
   });
@@ -27,7 +29,7 @@ function renderTable(data) {
   tbody.innerHTML = '';
   const totalCount = document.getElementById('totalCount');
 
-  data.forEach(item => {
+  data.rows.forEach(item => {
     tbody.innerHTML += `
 
       <tr>
@@ -46,7 +48,7 @@ function renderTable(data) {
     `;
   });
   
-  totalCount.innerText = `${data.length} รายการ`;
+  totalCount.innerText = `${data.rows.length} รายการ`;
 }
 
 function formatDate(dateString) {
