@@ -63,6 +63,8 @@ function formatDate(dateString) {
 
 
 async function deleteItem(id) {
+  const API = "https://expense-tracker-production-e297.up.railway.app";
+
   if (!confirm('ลบรายการนี้ใช่ไหม?')) return;
 
   await fetch(`${API}/api/history/${id}`, {
