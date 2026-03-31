@@ -35,7 +35,7 @@ Database:
 - Uses REST API with session authentication (cookies)
 
 ## Picture
-![รูปหน้า login]("./รูป/login.jpg")
-![รูปหน้า dashboard]("./รูป/dashboard.jpg")
-![รูปหน้า login]("./รูป/add.jpg")
-![รูปหน้า login]("./รูป/history.jpg")
+![รูปหน้า login](./รูป/login.jpg)
+![รูปหน้า dashboard](./รูป/dashboard.jpg)
+![รูปหน้า add](./รูป/add.jpg)
+![รูปหน้า history](./รูป/history.jpg)
