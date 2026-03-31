@@ -63,7 +63,7 @@ app.post('/login', async (req, res) => {
     const user = rows[0];
 
     if (user!.password === password) {
-      (req.session as { userId?: number }).userId = user!.id;
+      req.session.userId = user!.id;
       req.session.save(() => {
         res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/dashboard.html');
       });
