@@ -1,9 +1,7 @@
 async function loadHistory() {
   const API = "expense-tracker-production-e297.up.railway.app";
 
-  const res = await fetch(`${API}/api/history`, {
-    credentials: 'include'
-  });
+  const res = await fetch(`${API}/api/history`);
   const data = await res.json();
 
   document.getElementById('income').innerText = `฿ ${data.totalIncome}`;
