@@ -27,7 +27,7 @@ function renderTable(data) {
   tbody.innerHTML = '';
   const totalCount = document.getElementById('totalCount');
 
-  data.rows.forEach(item => {
+  data.forEach(item => {
     tbody.innerHTML += `
 
       <tr>
@@ -46,7 +46,7 @@ function renderTable(data) {
     `;
   });
   
-  totalCount.innerText = `${data.rows.length} รายการ`;
+  totalCount.innerText = `${data.length} รายการ`;
 }
 
 function formatDate(dateString) {
@@ -70,33 +70,4 @@ async function deleteItem(id) {
 
   fetchData();
 }
-////////////////
-
-// document.getElementById('addForm').addEventListener('submit', async (e) => {
-//   e.preventDefault(); 
-
-//   const amount = document.getElementById('amount').value;
-//   const category = document.getElementById('category').value;
-
-//   const res = await fetch('https://expense-tracker-production-e297.up.railway.app', {
-//     method: 'POST',
-//     credentials: 'include', 
-//     headers: {
-//       'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//       amount,
-//       category
-//     })
-//   });
-
-//   const text = await res.text();
-//   console.log(text);
-
-  
-//   window.location.href = '/pages/dashboard.html';
-// });
-
-
-
 
