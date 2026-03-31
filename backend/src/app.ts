@@ -139,7 +139,7 @@ app.post('/add', async (req, res) => {
   );
 
 
-  res.redirect('https://expense-tracker-git-main-pathmaker04s-projects.vercel.app/pages/add.html');
+  res.redirect('https://expense-tracker-production-e297.up.railway.app');
   
 });
 
