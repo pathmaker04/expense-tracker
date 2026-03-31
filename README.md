@@ -13,7 +13,7 @@ A full-stack web application for tracking income and expenses.
 - 📊 Dashboard with summary and charts
 - 📅 Monthly statistics
 - 🗂 Transaction history
-- 
+  
 ## 🛠 Tech Stack
 
 Frontend:
@@ -33,6 +33,3 @@ Database:
 - Frontend (Vercel) communicates with Backend (Railway)
 - Backend connects to MySQL database (Railway)
 - Uses REST API with session authentication (cookies)
-
-
-  
