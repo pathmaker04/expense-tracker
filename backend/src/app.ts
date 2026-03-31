@@ -30,6 +30,12 @@ app.get('/', (req, res) => {
   res.redirect('/login');
 });
 
+app.get('/index', (req, res) => {
+  const index = path.join(__dirname, '../../frontend/pages/index.html');
+  res.sendFile(index);
+  res.redirect('/login');
+});
+
 app.get('/login', (req, res) => {
   const login = path.join(__dirname, '../../frontend/pages/login.html');
   res.sendFile(login);
