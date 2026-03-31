@@ -152,5 +152,33 @@ async function deleteItem(id) {
 
   fetchData();
 }
+////////////////
+
+document.getElementById('addForm').addEventListener('submit', async (e) => {
+  e.preventDefault(); 
+
+  const amount = document.getElementById('amount').value;
+  const category = document.getElementById('category').value;
+
+  const res = await fetch('https://expense-tracker-production-e297.up.railway.app/add', {
+    method: 'POST',
+    credentials: 'include', 
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      amount,
+      category
+    })
+  });
+
+  const text = await res.text();
+  console.log(text);
+
+  
+  window.location.href = '/pages/dashboard.html';
+});
+
+
 
 
