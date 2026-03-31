@@ -65,7 +65,7 @@ app.post('/login', async (req, res) => {
     if (user!.password === password) {
       (req.session as any).userId = user!.id;
       req.session.save(() => {
-        res.redirect('/dashboard');
+        res.redirect('expense-tracker-production-e297.up.railway.app/dashboard');
       });
       
       //return res.redirect('/dashboard');
@@ -80,7 +80,7 @@ app.post('/login', async (req, res) => {
     );
 
     (req.session as any).userId = result.insertId;
-    return res.redirect('/dashboard');
+    return res.redirect('expense-tracker-production-e297.up.railway.app/dashboard');
   }
 });
 
@@ -131,7 +131,7 @@ app.post('/add', async (req, res) => {
   );
 
 
-  res.redirect('/add');
+  res.redirect('expense-tracker-production-e297.up.railway.app/add');
   
 });
 
@@ -158,7 +158,7 @@ app.delete('/api/history/:id', async (req, res) => {
 
 app.get('/logout', (req, res) => {
   req.session.destroy(() => {
-    res.redirect('/login');
+    res.redirect('expense-tracker-production-e297.up.railway.app/login');
   });
 });
 
