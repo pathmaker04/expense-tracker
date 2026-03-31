@@ -1,7 +1,9 @@
 async function loadDashboard() {
-  const API = "expense-tracker-production-e297.up.railway.app";
+  const API = "https://expense-tracker-production-e297.up.railway.app";
 
-  const res = await fetch(`${API}/api/dashboard`);
+  const res = await fetch(`${API}/api/dashboard`, {
+    credentials: 'include'
+  });
   const data = await res.json();
 
   document.getElementById('income').innerText = `฿ ${data.totalIncome}`;
