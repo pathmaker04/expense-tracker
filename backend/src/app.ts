@@ -6,20 +6,29 @@ import dashboardRouter  from './routes/dashboard.route.js';
 import historyRouter  from './routes/history.route.js';
 import session from 'express-session';
 import type { RowDataPacket } from 'mysql2/promise';
-
+import cors from 'cors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 
+app.use(cors({
+  origin: 'expense-tracker-mdbj6kl9o-pathmaker04s-projects.vercel.app',
+  credentials: true
+}));
 
 app.use(session({
   secret: 'mysecret',
   resave: false,
   saveUninitialized: false,
-  cookie: { secure: false }
+  cookie: { 
+    secure: true,      
+    httpOnly: true,
+    sameSite: 'none'
+   }
 }));
+
 app.use(express.static(path.join(__dirname, '../../frontend')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -27,13 +36,13 @@ app.use(express.json());
 ////////////////////////////////////
 
 app.get('/', (req, res) => {
-  res.redirect('/login');
+  res.redirect('expense-tracker-production-e297.up.railway.app/login');
 });
 
 app.get('/index', (req, res) => {
   const index = path.join(__dirname, '../../frontend/index.html');
   res.sendFile(index);
-  res.redirect('/login');
+  res.redirect('expense-tracker-production-e297.up.railway.app/login');
 });
 
 app.get('/login', (req, res) => {
