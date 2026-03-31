@@ -54,7 +54,7 @@ app.post('/login', async (req, res) => {
     const user = rows[0];
 
     if (user!.password === password) {
-      req.session.userId = user!.id;
+      (req.session as any).userId = user!.id;
       req.session.save(() => {
         res.redirect('/dashboard');
       });
@@ -70,7 +70,7 @@ app.post('/login', async (req, res) => {
       [email, password]
     );
 
-    req.session.userId = result.insertId;
+    (req.session as any).userId = result.insertId;
     return res.redirect('/dashboard');
   }
 });
@@ -110,7 +110,7 @@ app.get('/add', (req, res) => {
 app.post('/add', async (req, res) => {
   const { type, amount, category_id, date, note  } = req.body;
 
-  const user_id = req.session.userId;
+  const user_id = (req.session as any).userId;
 
 
   console.log('SESSION:', req.session);
