@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 app.use(cors({
-  origin: 'expense-tracker-mdbj6kl9o-pathmaker04s-projects.vercel.app',
+  origin: 'https://expense-tracker-git-main-pathmaker04s-projects.vercel.app',
   credentials: true
 }));
 
