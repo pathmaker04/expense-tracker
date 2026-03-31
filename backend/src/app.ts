@@ -122,7 +122,7 @@ app.post('/add', async (req, res) => {
   const userId = (req.session as any).userId;
   console.log('userId:', userId);
 
-  res.send('debug: ' + userId);
+  res.send('debug: ' + userId + '' + req.session);
 
 
   const { type, amount, category_id, date, note  } = req.body;
