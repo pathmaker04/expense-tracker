@@ -3,8 +3,8 @@
 A full-stack web application for tracking income and expenses.
 
 ## 🚀 Live Demo
-Frontend: https://your-frontend.vercel.app  
-Backend API: https://your-backend.up.railway.app
+Frontend: expense-tracker-git-main-pathmaker04s-projects.vercel.app
+Backend API: expense-tracker-production-e297.up.railway.app
 
 ## ✨ Features
 
