@@ -160,7 +160,7 @@ document.getElementById('addForm').addEventListener('submit', async (e) => {
   const amount = document.getElementById('amount').value;
   const category = document.getElementById('category').value;
 
-  const res = await fetch('https://expense-tracker-production-e297.up.railway.app/add', {
+  const res = await fetch('https://expense-tracker-production-e297.up.railway.app', {
     method: 'POST',
     credentials: 'include', 
     headers: {
