@@ -33,3 +33,6 @@ Database:
 - Frontend (Vercel) communicates with Backend (Railway)
 - Backend connects to MySQL database (Railway)
 - Uses REST API with session authentication (cookies)
+
+## Picture
+![รูปหน้า login]("./c/Web apps/รูป/login.jpg")
