@@ -117,6 +117,14 @@ app.get('/add', (req, res) => {
 });
 
 app.post('/add', async (req, res) => {
+  console.log('session:', req.session);
+
+  const userId = (req.session as any).userId;
+  console.log('userId:', userId);
+
+  res.send('debug');
+
+
   const { type, amount, category_id, date, note  } = req.body;
 
   const user_id = (req.session as any).userId;
